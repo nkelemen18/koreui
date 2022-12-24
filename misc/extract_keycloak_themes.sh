@@ -1,13 +1,27 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-TARGET_DIR=${DIR}/../themes/extracted_keycloak_themes
+TARGET_DIR=${DIR}/../extracted_keycloak_themes
+TMP_FILE=${TARGET_DIR}/tmp.jar
 echo "Extract themes to: ${DIR}"
 
+echo "Get theme path from Docker image"
+THEME_FILE_PATH=$(docker container exec koreui-dev-keycloak-1 //opt//misc//get_theme_path.sh)
+
+echo "Found theme: ${THEME_FILE_PATH}"
+
 rm -rf "${TARGET_DIR}"
-mkdir -p "${DIR}/../themes/"
+mkdir -p "${TARGET_DIR}"
+
 
 # shellcheck disable=SC2154
 # shellcheck disable=SC2086
-docker cp $jar koreui-dev-keycloak-1:/opt/keycloak/lib/lib/main/org.keycloak.keycloak-themes-20.0.1.jar "${TARGET_DIR}"
+docker cp "koreui-dev-keycloak-1:${THEME_FILE_PATH}" "${TMP_FILE}"
+
+echo "Unzip tmp file: ${TMP_FILE}"
+unzip "$TMP_FILE" -d "$TARGET_DIR"
+
+echo "Remove tmp file"
+rm "$TMP_FILE"
+
 echo "Extract finished"
