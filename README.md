@@ -4,6 +4,9 @@
 
 Icon pack: [CoreUI Icons](https://coreui.io/icons/)
 
+
+:boom: NEW: Dark mode :boom:
+
 Login page
 ![Login page](img/login.png)
 
@@ -11,6 +14,8 @@ Login page
 
 Download `koreui-<version>.jar` from [Releases](https://github.com/nkelemen18/koreui/releases), and put into providers folder of your Keycloak installation.
 see: [Deploying themes](https://www.keycloak.org/docs/latest/server_development/#deploying-themes)
+
+Tested with Keycloak `20.0.z`
 
 ### Refactored pages
 
@@ -66,3 +71,12 @@ Configure One-Time-Password page
 
 Forgot password page
 ![Forgot password page](img/forgot_password.png)
+
+#### Dark Mode
+
+
+Login page
+![Login page](img/login_dark.png)
+
+Registration page
+![Registration page](img/register_dark.png)
