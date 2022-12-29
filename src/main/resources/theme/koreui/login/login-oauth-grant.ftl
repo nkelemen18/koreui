@@ -8,7 +8,9 @@
         </#if>
     <#elseif section = "form">
         <#if client.attributes.logoUri??>
-            <img src="${client.attributes.logoUri}"/>
+            <div class="text-center">
+                <img class="mw-75" src="${client.attributes.logoUri}"/>
+            </div>
         </#if>
         <h3>${msg("oauthGrantRequest")}</h3>
 

@@ -6,7 +6,7 @@
 
     <groupId>hu.nkelemen</groupId>
     <artifactId>koreui</artifactId>
-    <version>20.0.0</version>
+    <version>999-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-services</artifactId>
-            <version>20.0.1</version>
+            <version>20.0.2</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
