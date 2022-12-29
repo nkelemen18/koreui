@@ -10,3 +10,7 @@ div#kc-header-wrapper {
     padding: 62px 10px 20px;
     white-space: normal;
 }
+
+.mw-75 {
+    max-width: 75% !important
+}

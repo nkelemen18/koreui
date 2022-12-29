@@ -51,7 +51,7 @@
     <#elseif section == "social-providers">
         <#if realm.password && social.providers??>
             <div class="row">
-                <hr class="col-12 mb-2">
+                <hr class="col-12 my-2">
                 <div class="col-12 text-center">
                     <h4>${msg("identity-provider-login-label")}</h4>
                 </div>
