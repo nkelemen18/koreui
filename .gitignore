@@ -162,3 +162,6 @@ buildNumber.properties
 
 #Ignore extracted themes
 extracted_keycloak_themes
+
+#Ignore node_modules folders
+**/node_modules
