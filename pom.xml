@@ -12,7 +12,7 @@
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <dir.common.resources>src/main/resources/theme/koreui/common/resources</dir.common.resources>
+        <dir.login.resources>src/main/resources/theme/koreui/login/resources</dir.login.resources>
     </properties>
 
     <build>
@@ -24,17 +24,8 @@
                     <exclude>**/package.json</exclude>
                     <exclude>**/package-lock.json</exclude>
                     <exclude>**/.gitignore</exclude>
-                    <exclude>**/common/resources/scss/**</exclude>
-                    <exclude>**/common/resources/ts/**</exclude>
+                    <exclude>**/koreui/login/resources/scss/**</exclude>
                 </excludes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/node_modules/@coreui/icons/css/*.min.css</include>
-                    <include>**/node_modules/@coreui/icons/fonts/*</include>
-                    <include>**/node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js</include>
-                </includes>
             </resource>
         </resources>
         <plugins>
@@ -54,10 +45,10 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>${dir.common.resources}/css</directory>
+                            <directory>${dir.login.resources}/css</directory>
                         </fileset>
                         <fileset>
-                            <directory>${dir.common.resources}/fonts</directory>
+                            <directory>${dir.login.resources}/vendor</directory>
                         </fileset>
                     </filesets>
                 </configuration>
@@ -84,7 +75,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <workingDirectory>${dir.common.resources}</workingDirectory>
+                            <workingDirectory>${dir.login.resources}</workingDirectory>
                             <arguments>install</arguments>
                         </configuration>
                     </execution>
@@ -96,7 +87,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <workingDirectory>${dir.common.resources}</workingDirectory>
+                            <workingDirectory>${dir.login.resources}</workingDirectory>
                             <arguments>run build-prod</arguments>
                         </configuration>
                     </execution>

@@ -15,10 +15,9 @@
 
         <title>${msg("loginTitle",(realm.displayName!''))}</title>
         <link rel="icon" href="${url.resourcesPath}/img/favicon.ico"/>
-        <link rel="stylesheet" href="${url.resourcesPath}/css/coreui.css">
-        <link rel="stylesheet" href="${url.resourcesPath}/css/koreui.css">
-        <link rel="stylesheet" href="${url.resourcesPath}/node_modules/@coreui/icons/css/free.min.css">
-        <link rel="stylesheet" href="${url.resourcesPath}/node_modules/@coreui/icons/css/brand.min.css">
+        <link rel="stylesheet" href="${url.resourcesPath}/css/style.css">
+        <link rel="stylesheet" href="${url.resourcesPath}/vendor/css/free.min.css">
+        <link rel="stylesheet" href="${url.resourcesPath}/vendor/css/brand.min.css">
     </head>
     <body>
     <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
@@ -110,7 +109,7 @@
             </div>
         </div>
     </div>
-    <script src="${url.resourcesPath}/node_modules/@coreui/coreui/dist/js//coreui.bundle.min.js"></script>
+    <script src="${url.resourcesPath}/vendor/js/coreui.bundle.min.js"></script>
     <script>
         (() => {
             const tooltipTriggerList = document.querySelectorAll('[data-coreui-toggle="tooltip"]');
