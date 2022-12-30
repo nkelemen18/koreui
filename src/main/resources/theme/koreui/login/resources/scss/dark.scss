@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/*!
+ * Koreui - CoreUI based Keycloak dark theme
+ * @link https://github.com/nkelemen18/koreui/
+ * Copyright (c) 2022 Norbert Kelemen
+ * License Apache-2.0 (https://github.com/nkelemen18/koreui/blob/main/LICENSE)
+ */
+.dark-theme {
+  --cui-body-bg: #303030;
+  --cui-body-color: rgb(240, 240, 240);
+  --cui-disabled: rgb(99, 99, 99);
+  --cui-border-color: rgba(80, 80, 80, 0.75);
+  --cui-link-color: #7871b7;
+  --cui-link-hover-color: #9d97d6
+}
+
+.dark-theme .btn-link {
+  --cui-btn-link-color: #7871b7;
+  --cui-btn-link-hover-color: #9d97d6;
+  --cui-btn-link-disabled-color: rgba(255, 255, 255, 0.38);
+}
+
+.dark-theme .card {
+  --cui-card-bg: #1b1b1b;
+  --cui-card-border-color: rgba(0, 0, 0, 0.75);
+  --cui-card-cap-bg: #2a2a2a;
+}
+
+.dark-theme .dropdown-menu {
+  --cui-dropdown-color: rgb(240, 240, 240);
+  --cui-dropdown-border-color: rgba(0, 0, 0, 0.75);
+  --cui-dropdown-bg: #1b1b1b;
+  --cui-dropdown-divider-bg: rgba(80, 80, 80, 0.75);
+  --cui-dropdown-link-color: rgb(240, 240, 240);
+  --cui-dropdown-link-hover-color: rgb(240, 240, 240);
+  --cui-dropdown-link-hover-bg: #2a2a2a;
+  --cui-dropdown-link-active-color: #fff;
+  --cui-dropdown-link-active-bg: #7871b7;
+  --cui-dropdown-link-disabled-color: rgb(99, 99, 99);
+  --cui-dropdown-header-color: rgb(240, 240, 240);
+}
+
+.dark-theme .form-control {
+  --cui-input-color: rgb(240, 240, 240);
+  --cui-input-bg: rgba(255, 255, 255, 0.05);
+  --cui-input-border-color: rgba(80, 80, 80, 0.75);
+  --cui-input-focus-color: rgb(240, 240, 240);
+  --cui-input-focus-bg: rgba(255, 255, 255, 0.1);
+  --cui-input-focus-border-color: rgba(108, 108, 108, 0.75);
+  --cui-input-disabled-bg: rgba(0, 0, 21, 0.1);
+  --cui-input-placeholder-color: rgba(154, 154, 154, 0.6);
+  --cui-input-plaintext-color: rgb(240, 240, 240);
+  --cui-form-text-color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-theme .form-check {
+  --cui-form-check-input-checked-color: #fff;
+  --cui-form-check-input-checked-bg-color: #7871b7;
+  --cui-form-check-input-checked-border-color: #7871b7;
+}
+
+.dark-theme .input-group {
+  --cui-input-group-addon-color: rgb(240, 240, 240);
+  --cui-input-group-addon-bg: rgba(255, 255, 255, 0.1);
+  --cui-input-group-addon-border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .list-group {
+  --cui-list-group-color: rgb(240, 240, 240);
+  --cui-list-group-bg: transparent;
+  --cui-list-group-border-color: rgba(80, 80, 80, 0.75);
+  --cui-list-group-hover-bg: rgba(255, 255, 255, 0.1);
+  --cui-list-group-active-color: #fff;
+  --cui-list-group-active-bg: #7871b7;
+  --cui-list-group-active-border-color: #7871b7;
+  --cui-list-group-disabled-color: rgba(255, 255, 255, 0.5);
+  --cui-list-group-disabled-bg: rgba(255, 255, 255, 0.8);
+  --cui-list-group-action-color: rgb(240, 240, 240);
+  --cui-list-group-action-hover-color: rgb(240, 240, 240);
+  --cui-list-group-action-active-color: rgb(240, 240, 240);
+  --cui-list-group-action-active-bg: #7871b7;
+}
+
+.dark-theme .btn-primary {
+  --cui-btn-color: rgb(0, 0, 21);
+  --cui-btn-bg: #7871b7;
+  --cui-btn-border-color: #7871b7;
+  --cui-btn-hover-color: rgb(0, 0, 21);
+  --cui-btn-hover-bg: #9791d4;
+  --cui-btn-hover-border-color: #918ad1;
+  --cui-btn-focus-shadow-rgb: 113, 106, 177;
+  --cui-btn-active-color: rgb(0, 0, 21);
+  --cui-btn-active-bg: #9d97d6;
+  --cui-btn-active-border-color: #918ad1;
+  --cui-btn-active-shadow: inset 0 3px 5px rgba(17, 14, 14, 0.34);
+  --cui-btn-disabled-color: rgb(0, 0, 21);
+  --cui-btn-disabled-bg: #7871b7;
+  --cui-btn-disabled-border-color: #7871b7;
+}
+
+.dark-theme .btn-success {
+  --cui-btn-color: rgb(0, 0, 21);
+  --cui-btn-bg: #4f9164;
+  --cui-btn-border-color: #4f9164;
+  --cui-btn-hover-color: rgb(0, 0, 21);
+  --cui-btn-hover-bg: #60b679;
+  --cui-btn-hover-border-color: #6ac07f;
+  --cui-btn-focus-shadow-rgb: 69, 128, 92;
+  --cui-btn-active-color: rgb(0, 0, 21);
+  --cui-btn-active-bg: #48bb6a;
+  --cui-btn-active-border-color: #72bd85;
+  --cui-btn-active-shadow: inset 0 3px 5px rgba(17, 14, 14, 0.34);
+  --cui-btn-disabled-color: rgb(0, 0, 21);
+  --cui-btn-disabled-bg: #729b7f;
+  --cui-btn-disabled-border-color: #729b7f;
+}
+
+.dark-theme .btn-danger {
+  --cui-btn-color: rgb(0, 0, 21);
+  --cui-btn-bg: #ab5c5c;
+  --cui-btn-border-color: #ab5c5c;
+  --cui-btn-hover-color: rgb(0, 0, 21);
+  --cui-btn-hover-bg: #af5151;
+  --cui-btn-hover-border-color: #af6d6d;
+  --cui-btn-focus-shadow-rgb: 169, 96, 99;
+  --cui-btn-active-color: rgb(0, 0, 21);
+  --cui-btn-active-bg: #af4646;
+  --cui-btn-active-border-color: #af6d6d;
+  --cui-btn-active-shadow: inset 0 3px 5px rgba(17, 14, 14, 0.34);
+  --cui-btn-disabled-color: rgb(0, 0, 21);
+  --cui-btn-disabled-bg: #a97676;
+  --cui-btn-disabled-border-color: #a97676;
+}
+
+.dark-theme .btn-outline-dark {
+  --cui-btn-color: rgb(240, 240, 240);
+  --cui-btn-border-color: rgba(80, 80, 80, 0.75);
+  --cui-btn-hover-color: #fff;
+  --cui-btn-hover-bg: rgba(255, 255, 255, 0.1);
+  --cui-btn-hover-border-color: rgba(108, 108, 108, 0.75);
+  --cui-btn-focus-shadow-rgb: 70, 70, 70;
+  --cui-btn-active-color: #fff;
+  --cui-btn-active-bg: rgba(255, 255, 255, 0.1);
+  --cui-btn-active-border-color: rgba(108, 108, 108, 0.75);
+  --cui-btn-active-shadow: inset 0 3px 5px rgba(17, 14, 14, 0.34);
+  --cui-btn-disabled-color: rgba(154, 154, 154, 0.6);
+  --cui-btn-disabled-bg: transparent;
+  --cui-gradient: none;
+}
+
+.dark-theme .btn-ghost {
+  --cui-btn-color: rgba(255, 255, 255, 0.75);
+}
+
+.dark-theme .list-group-item {
+  --cui-list-group-action-hover-color: #646464;
+  --cui-list-group-action-active-bg: #646464;
+  --cui-list-group-action-hover-bg: #ededed;
+}

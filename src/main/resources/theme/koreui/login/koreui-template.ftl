@@ -1,4 +1,5 @@
 <#macro loginLayout displayInfo=false displayHeader=false displayMessage=true displayRequiredFields=false>
+    <#assign themeVariant = properties.theme_variant!'light'/>
     <!doctype html>
     <html lang="en">
     <head>
@@ -16,11 +17,14 @@
         <title>${msg("loginTitle",(realm.displayName!''))}</title>
         <link rel="icon" href="${url.resourcesPath}/img/favicon.ico"/>
         <link rel="stylesheet" href="${url.resourcesPath}/css/style.css">
+        <#if themeVariant == "dark">
+            <link rel="stylesheet" href="${url.resourcesPath}/css/dark.css">
+        </#if>
         <link rel="stylesheet" href="${url.resourcesPath}/vendor/css/free.min.css">
         <link rel="stylesheet" href="${url.resourcesPath}/vendor/css/brand.min.css">
     </head>
-    <body>
-    <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+    <body class="<#if themeVariant == "dark">dark-theme</#if>">
+    <div class="min-vh-100 d-flex flex-row align-items-center <#if themeVariant == "light">bg-light</#if>">
         <div class="container">
             <div class="row justify-content-center">
                 <div id="kc-header" class="col-12 text-center">

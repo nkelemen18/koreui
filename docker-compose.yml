@@ -27,7 +27,8 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
     volumes:
-      - ./src/main/resources/theme/koreui/:/opt/keycloak/themes/koreui
+      - ./misc/get_theme_path.sh/:/opt/misc/get_theme_path.sh:ro
+      - ./src/main/resources/theme/:/opt/keycloak/themes/
     ports:
       - "8080:8080"
     depends_on:
