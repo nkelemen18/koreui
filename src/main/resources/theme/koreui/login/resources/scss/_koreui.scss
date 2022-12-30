@@ -1,0 +1,22 @@
+/*!
+ * Koreui - CoreUI based Keycloak theme
+ * @link https://github.com/nkelemen18/koreui/
+ * Copyright (c) 2022 Norbert Kelemen
+ * License Apache-2.0 (https://github.com/nkelemen18/koreui/blob/main/LICENSE)
+ */
+div#kc-header {
+  margin-bottom: 40px;
+}
+
+div#kc-header-wrapper {
+  font-size: 29px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.2em;
+  padding: 62px 10px 20px;
+  white-space: normal;
+}
+
+.mw-75 {
+  max-width: 75% !important
+}

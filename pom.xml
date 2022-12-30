@@ -12,10 +12,93 @@
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <dir.login.resources>src/main/resources/theme/koreui/login/resources</dir.login.resources>
     </properties>
 
     <build>
-        <sourceDirectory>src/main/resources</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>**/node_modules/**</exclude>
+                    <exclude>**/package.json</exclude>
+                    <exclude>**/package-lock.json</exclude>
+                    <exclude>**/.gitignore</exclude>
+                    <exclude>**/koreui/login/resources/scss/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${dir.login.resources}/css</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>${dir.login.resources}/vendor</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>1.12.0</version>
+                <executions>
+                    <!-- Download NPM tools -->
+                    <execution>
+                        <id>setup-node</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                    </execution>
+                    <!-- Download NPM packages -->
+                    <execution>
+                        <id>npm-install-common</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${dir.login.resources}</workingDirectory>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+                    <!-- build css files -->
+                    <execution>
+                        <id>build-css</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${dir.login.resources}</workingDirectory>
+                            <arguments>run build-prod</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <nodeVersion>v16.14.2</nodeVersion>
+                    <installDirectory>../</installDirectory>
+                </configuration>
+            </plugin>
+
+        </plugins>
     </build>
 
     <dependencies>

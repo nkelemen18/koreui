@@ -1,0 +1,25 @@
+// Import core
+@import "@coreui/coreui/scss/coreui-reboot";
+@import "@coreui/coreui/scss/maps";
+@import "@coreui/coreui/scss/utilities";
+
+// Optionally include any other parts as needed
+@import "@coreui/coreui/scss/alert";
+@import "@coreui/coreui/scss/button-group";
+@import "@coreui/coreui/scss/buttons";
+@import "@coreui/coreui/scss/card";
+@import "@coreui/coreui/scss/containers";
+@import "@coreui/coreui/scss/dropdown";
+@import "@coreui/coreui/scss/forms";
+@import "@coreui/coreui/scss/grid";
+@import "@coreui/coreui/scss/icon";
+@import "@coreui/coreui/scss/images";
+@import "@coreui/coreui/scss/list-group";
+@import "@coreui/coreui/scss/placeholders";
+@import "@coreui/coreui/scss/tooltip";
+
+
+// Utilities
+@import "@coreui/coreui/scss/utilities/api";
+
+@import "koreui";

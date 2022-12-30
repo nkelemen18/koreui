@@ -1,0 +1,38 @@
+{
+  "name": "koreui",
+  "version": "1.0.0",
+  "description": "**Koreui** is a [CoreUI](https://coreui.io/) based [Keycloak](https://www.keycloak.org/) login theme.",
+  "main": "index.js",
+  "scripts": {
+    "css-compile-dev": "sass --watch --no-error-css --load-path=node_modules/ scss/:css/",
+    "css-build-prod": "sass --style compressed --load-path=node_modules scss/:css/",
+    "copy-static-files": "npm-run-all --parallel copy-icons-* copy-coreui-js",
+    "copy-icons-free": "copyfiles -u 4 node_modules/@coreui/icons/css/free.min.* vendor/css",
+    "copy-icons-brand": "copyfiles -u 4 node_modules/@coreui/icons/css/brand.min.* vendor/css",
+    "copy-icons-fonts": "copyfiles -u 4 -a node_modules/@coreui/icons/fonts/* vendor/fonts",
+    "copy-coreui-js": "copyfiles -u 5 node_modules/@coreui/coreui/dist/js/coreui.bundle.min.* vendor/js",
+    "build-prod": "npm-run-all --parallel css-build-prod copy-static-files",
+    "serve-dev": "npm-run-all --parallel css-compile-dev copy-static-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkelemen18/koreui.git"
+  },
+  "author": {
+    "name": "Norbert Kelemen"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nkelemen18/koreui/issues"
+  },
+  "homepage": "https://github.com/nkelemen18/koreui#readme",
+  "dependencies": {
+    "@coreui/coreui": "^4.2.5",
+    "@coreui/icons": "^2.1.0"
+  },
+  "devDependencies": {
+    "copyfiles": "2.4.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.57.1"
+  }
+}
