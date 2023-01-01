@@ -11,7 +11,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
+
     - name: Set up JDK 11
       uses: actions/setup-java@v3.6.0
       with:
@@ -23,6 +25,11 @@ jobs:
     - name: Bump version
       run: mvn -B versions:set -DnewVersion=${{ github.event.release.tag_name }} -DgenerateBackupPoms=false
 
+    - name: Configure Git User
+      run: |
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+
     - name: Build with Maven
       run: mvn -B package
 
@@ -31,12 +38,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
-    - name: Release to GitHub releases
+    - name: Publish to GitHub releases
       uses: softprops/action-gh-release@v1
       with:
         files: "target/koreui-${{ github.event.release.tag_name }}.jar"
-        body_path: "RELEASELOG.md"
         fail_on_unmatched_files: true
-        tag_name: ${{ github.event.release.tag_name }}
       env:
         GITHUB_TOKEN: ${{ github.token }}
