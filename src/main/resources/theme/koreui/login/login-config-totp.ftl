@@ -1,4 +1,4 @@
-<#import "koreui-template.ftl" as template>
+login-oauth2-device-verify-user-code.ftl
 <@template.loginLayout displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
 
     <#if section = "card-header">
