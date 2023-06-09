@@ -18,6 +18,7 @@
                         </div>
                     </button>
                 </#list>
+                <input type="hidden" id="authexec-hidden-input" name="authenticationExecution" />
             </div>
         </form>
     </#if>

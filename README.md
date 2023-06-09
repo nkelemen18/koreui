@@ -28,7 +28,7 @@ Tested with Keycloak `20.0.z`
 - [x] login-config-totp.ftl
 - [x] login-idp-link-confirm.ftl
 - [ ] login-idp-link-email.ftl
-- [ ] login-oauth2-device-verify-user-code.ftl
+- [x] login-oauth2-device-verify-user-code.ftl
 - [x] login-oauth-grant.ftl
 - [x] login-otp.ftl
 - [x] login-page-expired.ftl

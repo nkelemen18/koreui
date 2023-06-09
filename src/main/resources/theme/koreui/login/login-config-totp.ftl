@@ -1,14 +1,14 @@
-<#import "koreui-template.ftl" as template>
+login-oauth2-device-verify-user-code.ftl
 <@template.loginLayout displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
 
     <#if section = "card-header">
         ${msg("loginTotpTitle")}
     <#elseif section = "form">
-        <ol>
+        <ol id="kc-totp-settings">
             <li>
                 <p>${msg("loginTotpStep1")}</p>
 
-                <ul>
+                <ul id="kc-totp-supported-apps">
                     <#list totp.supportedApplications as app>
                         <li>${msg(app)}</li>
                     </#list>
@@ -67,7 +67,7 @@
 
 
                 <#if messagesPerField.existsError('totp')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-otp-code" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('totp'))?no_esc}
                     </div>
                 </#if>
@@ -84,7 +84,7 @@
 
 
                 <#if messagesPerField.existsError('userLabel')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-otp-label" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('userLabel'))?no_esc}
                     </div>
                 </#if>

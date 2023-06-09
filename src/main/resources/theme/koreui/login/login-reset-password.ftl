@@ -1,5 +1,5 @@
 <#import "koreui-template.ftl" as template>
-<@template.loginLayout displayInfo=true displayHeader=true; section>
+<@template.loginLayout displayInfo=true displayCardHeader=true; section>
     <#if section = "card-header">
         ${msg("emailForgotTitle")}
     <#elseif section = "form">
@@ -13,7 +13,7 @@
                        type="text"/>
 
                 <#if messagesPerField.existsError('username')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-username" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.get('username'))?no_esc}
                     </div>
                 </#if>

@@ -3,7 +3,7 @@
     <#if section = "card-header">
         ${msg("registerTitle")}
     <#elseif section = "form">
-        <form action="${url.registrationAction}" method="post">
+        <form id="kc-register-form" action="${url.registrationAction}" method="post">
 
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="icon cil-baby"></i></span>
@@ -13,7 +13,7 @@
 
 
                 <#if messagesPerField.existsError('firstName')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-firstname" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('firstName'))?no_esc}
                     </div>
                 </#if>
@@ -28,7 +28,7 @@
 
 
                 <#if messagesPerField.existsError('lastName')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-lastname" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('lastName'))?no_esc}
                     </div>
                 </#if>
@@ -42,7 +42,7 @@
 
 
                 <#if messagesPerField.existsError('email')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-email" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('email'))?no_esc}
                     </div>
                 </#if>
@@ -58,7 +58,7 @@
 
 
                     <#if messagesPerField.existsError('username')>
-                        <div class="invalid-feedback">
+                        <div id="input-error-username" class="invalid-feedback">
                             ${kcSanitize(messagesPerField.getFirstError('username'))?no_esc}
                         </div>
                     </#if>
@@ -74,7 +74,7 @@
 
 
                     <#if messagesPerField.existsError('password')>
-                        <div class="invalid-feedback">
+                        <div id="input-error-password" class="invalid-feedback">
                             ${kcSanitize(messagesPerField.getFirstError('password'))?no_esc}
                         </div>
                     </#if>
@@ -88,7 +88,7 @@
 
 
                     <#if messagesPerField.existsError('password-confirm')>
-                        <div class="invalid-feedback">
+                        <div id="input-error-password-confirm" class="invalid-feedback">
                             ${kcSanitize(messagesPerField.getFirstError('password-confirm'))?no_esc}
                         </div>
                     </#if>
@@ -101,7 +101,7 @@
                 </div>
             </#if>
 
-            <div class="d-grid gap-2">
+            <div id="kc-form-buttons" class="d-grid gap-2">
                 <button type="submit" class="btn btn-success px-4">${msg("doRegister")}</button>
             </div>
 
