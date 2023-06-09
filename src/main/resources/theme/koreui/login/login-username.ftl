@@ -17,7 +17,7 @@
 
 
                         <#if messagesPerField.existsError('username')>
-                            <div class="invalid-feedback">
+                            <div id="input-error-username" class="invalid-feedback">
                                 ${kcSanitize(messagesPerField.getFirstError('username'))?no_esc}
                             </div>
                         </#if>
@@ -32,7 +32,7 @@
                     </div>
                 </#if>
 
-                <div class="d-grid gap-2">
+                <div id="kc-form-buttons" class="d-grid gap-2">
                     <button tabindex="3" name="login" id="kc-login"
                             class="btn btn-primary px-4">${msg("doLogIn")}</button>
                 </div>
@@ -40,12 +40,12 @@
 
         </#if>
     <#elseif section = "info">
-        <div class="text-center">
+        <div id="kc-registration" class="text-center">
             ${msg("noAccount")} <a href="${url.registrationUrl}" tabindex="4">${msg("doRegister")}</a>
         </div>
     <#elseif section="social-providers">
         <#if realm.password && social.providers??>
-            <div class="row">
+            <div id="kc-social-providers" class="row">
                 <div class="col-12 text-center">
                     <h4>${msg("identity-provider-login-label")}</h4>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="row g-1 row-cols-<#if social.providers?size gt 3>2<#else>1</#if>">
                     <#list social.providers as p>
                         <div class="col d-grid">
-                            <a type="button" href="${p.loginUrl}" class="btn btn-sm btn-outline-dark ">
+                            <a id="social-${p.alias}" type="button" href="${p.loginUrl}" class="btn btn-sm btn-outline-dark ">
                                 <span class="cib-${p.alias} mr-2"></span> ${p.displayName!}
                             </a>
                         </div>

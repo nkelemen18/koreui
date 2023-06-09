@@ -6,7 +6,7 @@ TMP_FILE=${TARGET_DIR}/tmp.jar
 echo "Extract themes to: ${DIR}"
 
 echo "Get theme path from Docker image"
-THEME_FILE_PATH=$(docker container exec koreui-dev-keycloak-1 //opt//misc//get_theme_path.sh)
+THEME_FILE_PATH=$(docker container exec koreui-dev-keycloak-1 "//opt/misc//get_theme_path.sh")
 
 echo "Found theme: ${THEME_FILE_PATH}"
 

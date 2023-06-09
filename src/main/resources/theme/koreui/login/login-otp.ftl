@@ -14,7 +14,7 @@
 
 
                 <#if messagesPerField.existsError('totp')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-otp-code" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('totp'))?no_esc}
                     </div>
                 </#if>

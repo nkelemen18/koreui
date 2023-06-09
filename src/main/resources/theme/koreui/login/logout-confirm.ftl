@@ -8,7 +8,7 @@
         <form class="form-actions" action="${url.logoutConfirmAction}" method="POST">
             <input type="hidden" name="session_code" value="${logoutConfirm.code}">
 
-            <div class="input-group mb-3">
+            <div id="kc-form-buttons" class="input-group mb-3">
                 <button name="confirmLogout" id="kc-logout" type="submit"
                         class="btn btn-primary">${msg("doLogout")}</button>
             </div>

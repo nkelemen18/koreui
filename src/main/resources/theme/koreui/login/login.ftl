@@ -4,7 +4,8 @@
     <#if section = "header">
         <h3>${msg("loginTitle",(realm.displayName!''))}</h3>
     <#elseif section = "form">
-        <form onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
+        <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}"
+              method="post">
             <#if !usernameHidden??>
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="icon cil-user"></i></span>
@@ -15,7 +16,7 @@
 
 
                     <#if messagesPerField.existsError('username','password')>
-                        <div class="invalid-feedback">
+                        <div id="input-error"  class="invalid-feedback">
                             ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
                         </div>
                     </#if>
@@ -30,7 +31,7 @@
             </div>
 
             <#if realm.rememberMe && !usernameHidden??>
-                <div class="form-check mb-3">
+                <div id="kc-form-options" class="form-check mb-3">
                     <input tabindex="3" class="form-check-input" type="checkbox" id="rememberMe"
                            name="rememberMe" <#if login.rememberMe??>checked</#if> />
                     <label class="form-check-label" for="rememberMe">${msg("rememberMe")}</label>
@@ -50,7 +51,7 @@
 
     <#elseif section == "social-providers">
         <#if realm.password && social.providers??>
-            <div class="row">
+            <div id="kc-social-providers" class="row">
                 <hr class="col-12 my-2">
                 <div class="col-12 text-center">
                     <h4>${msg("identity-provider-login-label")}</h4>
@@ -59,7 +60,8 @@
                 <div class="row g-1 row-cols-<#if social.providers?size gt 3>2<#else>1</#if>">
                     <#list social.providers as p>
                         <div class="col d-grid">
-                            <a type="button" href="${p.loginUrl}" class="btn btn-sm btn-outline-dark ">
+                            <a id="social-${p.alias}" type="button" href="${p.loginUrl}"
+                               class="btn btn-sm btn-outline-dark ">
                                 <span class="${p.iconClasses} mr-2"></span> ${p.displayName!}
                             </a>
                         </div>

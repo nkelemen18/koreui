@@ -56,7 +56,7 @@
             <input type="hidden" name="code" value="${oauth.code}">
 
 
-            <div class="d-grid gap-2">
+            <div id="kc-form-buttons" class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary" name="accept" id="updateProfile">${msg("doYes")}</button>
                 <button type="submit" class="btn btn-light" name="cancel" id="linkAccount">${msg("doNo")}</button>
             </div>

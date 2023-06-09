@@ -10,18 +10,18 @@
 
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="icon cil-lock-locked"></i></span>
-                        <input tabindex="1" name="password" type="password"
+                        <input tabindex="1" id="password" name="password" type="password"
                                class="form-control <#if messagesPerField.existsError('password')>is-invalid</#if>"
                                placeholder="${msg("password")}" autocomplete="on" autofocus>
 
                         <#if messagesPerField.existsError('password')>
-                            <div class="invalid-feedback">
+                            <div id="input-error-password" class="invalid-feedback">
                                 ${kcSanitize(messagesPerField.getFirstError('password'))?no_esc}
                             </div>
                         </#if>
                     </div>
 
-                    <div class="d-grid">
+                    <div id="kc-form-buttons" class="d-grid">
                         <button tabindex="2" name="login" id="kc-login" class="btn btn-primary px-4">
                             ${msg("doLogIn")}
                         </button>

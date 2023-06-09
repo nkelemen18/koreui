@@ -13,7 +13,7 @@
 
 
                     <#if messagesPerField.existsError('username')>
-                        <div class="invalid-feedback">
+                        <div id="input-error-username" class="invalid-feedback">
                             ${kcSanitize(messagesPerField.getFirstError('username'))?no_esc}
                         </div>
                     </#if>
@@ -29,7 +29,7 @@
 
 
                     <#if messagesPerField.existsError('email')>
-                        <div class="invalid-feedback">
+                        <div id="input-error-email" class="invalid-feedback">
                             ${kcSanitize(messagesPerField.getFirstError('email'))?no_esc}
                         </div>
                     </#if>
@@ -44,7 +44,7 @@
 
 
                 <#if messagesPerField.existsError('firstName')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-firstname" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('firstName'))?no_esc}
                     </div>
                 </#if>
@@ -59,7 +59,7 @@
 
 
                 <#if messagesPerField.existsError('lastName')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-lastname" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('lastName'))?no_esc}
                     </div>
                 </#if>

@@ -6,6 +6,8 @@
         <form id="kc-passwd-update-form" action="${url.loginAction}" method="post">
             <input type="hidden" id="username" name="username" value="${username}" autocomplete="username"
                    readonly="readonly"/>
+            <input type="password" id="password" name="password" autocomplete="current-password" class="d-none"/>
+
 
 
             <div class="input-group mb-3">
@@ -16,7 +18,7 @@
 
 
                 <#if messagesPerField.existsError('password')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-password" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('password'))?no_esc}
                     </div>
                 </#if>
@@ -30,7 +32,7 @@
 
 
                 <#if messagesPerField.existsError('password-confirm')>
-                    <div class="invalid-feedback">
+                    <div id="input-error-password-confirm" class="invalid-feedback">
                         ${kcSanitize(messagesPerField.getFirstError('password-confirm'))?no_esc}
                     </div>
                 </#if>

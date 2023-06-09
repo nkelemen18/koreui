@@ -1,4 +1,4 @@
-<#macro loginLayout displayInfo=false displayHeader=false displayMessage=true displayRequiredFields=false>
+<#macro loginLayout displayInfo=false displayCardHeader=false displayMessage=true displayRequiredFields=false>
     <#assign themeVariant = properties.theme_variant!'light'/>
     <!doctype html>
     <html lang="en">
@@ -31,25 +31,26 @@
                     <div id="kc-header-wrapper"
                          class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
                 </div>
-                <div class="card col-md-8 col-xl-6 col-xxl-5 p-0 mb-0">
-                    <#if displayHeader || realm.internationalizationEnabled && locale.supported?size gt 1>
+                <div id="kc-content" class="card col-md-8 col-xl-6 col-xxl-5 p-0 mb-0">
+                    <#if displayCardHeader || realm.internationalizationEnabled && locale.supported?size gt 1>
                         <div class="card-header px-4">
                             <div class="row">
                                 <div class="col p-0 d-flex align-items-center">
                                     <#nested "card-header">
                                 </div>
                                 <#if realm.internationalizationEnabled && locale.supported?size gt 1>
-                                    <div class="col-3 col-xs-2 p-0 text-end">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-ghost dropdown-toggle" href="#" role="button"
-                                               data-coreui-toggle="dropdown">
+                                    <div id="kc-locale" class="col-3 col-xs-2 p-0 text-end">
+                                        <div id="kc-locale-wrapper" class="dropdown">
+                                            <a id="kc-current-locale-link" class="btn btn-sm btn-ghost dropdown-toggle"
+                                               href="#" role="button" data-coreui-toggle="dropdown">
                                                 ${locale.current}
                                             </a>
 
-                                            <ul class="dropdown-menu">
+                                            <ul id="kc-locale-dropdown" class="dropdown-menu">
                                                 <#list locale.supported as l>
                                                     <#if locale.currentLanguageTag == l.languageTag>
-                                                        <li><a class="dropdown-item disabled" href="#">${l.label}</a>
+                                                        <li><a id="kc-current-locale-link"
+                                                               class="dropdown-item disabled" href="#">${l.label}</a>
                                                         </li>
                                                     <#else >
                                                         <li><a class="dropdown-item" href="${l.url}">${l.label}</a></li>
@@ -62,7 +63,7 @@
                             </div>
                         </div>
                     </#if>
-                    <div class="card-body px-4 pt-3 py-2">
+                    <div id="kc-content-wrapper" class="card-body px-4 pt-3 py-2">
                         <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
                             <div class="alert alert-<#if message.type = 'error'>danger<#else>${message.type}</#if>"
                                  role="alert">
@@ -105,7 +106,7 @@
 
                     </div>
                     <#if displayInfo>
-                        <div class="card-footer px-4">
+                        <div id="kc-info-wrapper" class="card-footer px-4">
                             <#nested "info">
                         </div>
                     </#if>
