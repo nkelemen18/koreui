@@ -1,5 +1,6 @@
 [#ftl]
 [#-- @implicitly included --]
+[#-- @ftlvariable name="samlPost" type="org.keycloak.forms.login.freemarker.model.SAMLPostFormBean" --]
 [#-- @ftlvariable name="url" type="org.keycloak.forms.login.freemarker.model.UrlBean" --]
 [#-- @ftlvariable name="realm" type="org.keycloak.forms.login.freemarker.model.RealmBean" --]
 [#-- @ftlvariable name="locale" type="org.keycloak.theme.beans.LocaleBean" --]
