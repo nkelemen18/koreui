@@ -44,7 +44,7 @@ Tested with Keycloak `20.0.z`
 - [x] logout-confirm.ftl
 - [x] register.ftl
 - [ ] register-user-profile.ftl
-- [ ] saml-post-form.ftl
+- [x] saml-post-form.ftl
 - [x] select-authenticator.ftl
 - [x] template.ftl
 - [x] terms.ftl
