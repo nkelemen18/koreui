@@ -12,7 +12,8 @@
                 ${message.summary}
                 <#if requiredActions??>
                     <#list requiredActions>:
-                        <b><#items as reqActionItem>${msg("requiredAction.${reqActionItem}")}<#sep>, </#items></b>                    </#list>
+                        <b><#items as reqActionItem>${msg("requiredAction.${reqActionItem}")}<#sep>, </#items></b>
+                    </#list>
                 <#else>
                 </#if>
             </p>
