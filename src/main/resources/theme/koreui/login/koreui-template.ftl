@@ -1,7 +1,7 @@
 <#macro loginLayout displayInfo=false displayCardHeader=false displayMessage=true displayRequiredFields=false>
     <#assign themeVariant = properties.theme_variant!'light'/>
     <!doctype html>
-    <html lang="en">
+    <html <#if realm.internationalizationEnabled> lang="${locale.currentLanguageTag}"<#else> lang="en"</#if>>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>

@@ -1,4 +1,5 @@
 <#import "koreui-template.ftl" as template>
+<#import "password-commons.ftl" as passwordCommons>
 <@template.loginLayout ; section>
     <#if section = "card-header">
         <i class="cil-fingerprint me-2"></i> ${kcSanitize(msg("webauthn-registration-title"))?no_esc}
@@ -11,6 +12,7 @@
             <input type="hidden" id="authenticatorLabel" name="authenticatorLabel"/>
             <input type="hidden" id="transports" name="transports"/>
             <input type="hidden" id="error" name="error"/>
+            <@passwordCommons.logoutOtherSessions/>
         </form>
 
         <script type="text/javascript" src="${url.resourcesCommonPath}/node_modules/jquery/dist/jquery.min.js"></script>
@@ -30,7 +32,7 @@
                 let userid = "${userid}";
                 let username = "${username}";
 
-                let signatureAlgorithms = "${signatureAlgorithms}";
+                let signatureAlgorithms =[<#list signatureAlgorithms as sigAlg>${sigAlg},</#list>]
                 let pubKeyCredParams = getPubKeyCredParams(signatureAlgorithms);
 
                 let rpEntityName = "${rpEntityName}";
@@ -122,13 +124,12 @@
                     });
             }
 
-            function getPubKeyCredParams(signatureAlgorithms) {
+            function getPubKeyCredParams(signatureAlgorithmsList) {
                 let pubKeyCredParams = [];
-                if (signatureAlgorithms === "") {
+                if (signatureAlgorithmsList === []) {
                     pubKeyCredParams.push({type: "public-key", alg: -7});
                     return pubKeyCredParams;
                 }
-                let signatureAlgorithmsList = signatureAlgorithms.split(',');
 
                 for (let i = 0; i < signatureAlgorithmsList.length; i++) {
                     pubKeyCredParams.push({

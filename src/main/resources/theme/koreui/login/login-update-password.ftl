@@ -1,4 +1,5 @@
 <#import "koreui-template.ftl" as template>
+<#import "password-commons.ftl" as passwordCommons>
 <@template.loginLayout displayMessage=!messagesPerField.existsError('password','password-confirm'); section>
     <#if section = "card-header">
         ${msg("updatePasswordTitle")}
@@ -38,13 +39,7 @@
                 </#if>
             </div>
 
-            <#if isAppInitiatedAction??>
-                <div class="form-check mb-3">
-                    <input tabindex="3" class="form-check-input" type="checkbox" id="logout-sessions"
-                           name="logout-sessions" value="on" checked>
-                    <label class="form-check-label" for="logout-sessions">${msg("logoutOtherSessions")}</label>
-                </div>
-            </#if>
+            <@passwordCommons.logoutOtherSessions/>
 
             <div class="d-grid gap-2">
                 <button tabindex="4" type="submit" id="savePasswordBtn"
