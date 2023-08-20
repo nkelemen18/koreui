@@ -15,10 +15,13 @@ Login page
 Download `koreui-<version>.jar` from [Releases](https://github.com/nkelemen18/koreui/releases), and put into providers folder of your Keycloak installation.
 see: [Deploying themes](https://www.keycloak.org/docs/latest/server_development/#deploying-themes)
 
-Tested with Keycloak `20.0.z`
+Tested with Keycloak `22.0.1`
+
+*Note: Major version follows keycloak's major version*
 
 ### Refactored pages
 
+- [ ] code.ftl
 - [x] delete-account-confirm.ftl
 - [x] error.ftl
 - [ ] frontchannel-logout.ftl
@@ -35,6 +38,7 @@ Tested with Keycloak `20.0.z`
 - [x] login-password.ftl
 - [ ] login-recovery-authn-code-config.ftl
 - [ ] login-recovery-authn-code-input.ftl
+- [ ]login-reset-otp.ftl
 - [x] login-reset-password.ftl
 - [x] login-update-password.ftl
 - [x] login-update-profile.ftl

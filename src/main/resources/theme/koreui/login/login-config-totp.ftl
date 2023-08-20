@@ -1,4 +1,5 @@
 <#import "koreui-template.ftl" as template>
+<#import "password-commons.ftl" as passwordCommons>
 <@template.loginLayout displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
 
     <#if section = "card-header">
@@ -88,6 +89,10 @@
                         ${kcSanitize(messagesPerField.getFirstError('userLabel'))?no_esc}
                     </div>
                 </#if>
+            </div>
+
+            <div class="${properties.kcFormGroupClass!}">
+                <@passwordCommons.logoutOtherSessions/>
             </div>
 
             <div class="d-grid gap-2">

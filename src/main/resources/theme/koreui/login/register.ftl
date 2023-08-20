@@ -1,4 +1,5 @@
 <#import "koreui-template.ftl" as template>
+<#import "register-commons.ftl" as registerCommons>
 <@template.loginLayout ; section>
     <#if section = "card-header">
         ${msg("registerTitle")}
@@ -94,6 +95,8 @@
                     </#if>
                 </div>
             </#if>
+
+            <@registerCommons.termsAcceptance/>
 
             <#if recaptchaRequired??>
                 <div class="input-group mb-3">
